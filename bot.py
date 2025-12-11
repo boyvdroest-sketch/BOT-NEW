@@ -181,10 +181,13 @@ def start_command(message):
         types.InlineKeyboardButton("🏠 Vacation Rentals", callback_data="acc_vacation")
     )
     
-    # Contact & Channel
-    button_channel = types.InlineKeyboardButton("📢 Join Deals Channel", url="https://t.me/flights_half_off")
-    button_contact = types.InlineKeyboardButton("💬 Contact Admin", url="https://t.me/yrfrnd_spidy")
-    keyboard.add(button_channel, button_contact)
+    # Contact & Channel - UPDATED LINKS
+    button_channel = types.InlineKeyboardButton("📢 Join Deals Channel", url="https://t.me/flights_bills_b4u")
+    button_contact1 = types.InlineKeyboardButton("💬 Contact Admin", url="https://t.me/yrfrnd_spidy")
+    button_contact2 = types.InlineKeyboardButton("📞 Alt Contact", url="https://t.me/Eatsplugsus")
+    
+    keyboard.add(button_channel)
+    keyboard.add(button_contact1, button_contact2)
 
     # Short, simple welcome message
     message_text = (
@@ -208,15 +211,15 @@ def accommodation_handler(call):
         # Detailed response
         response = f"{offer['title']}\n\n{offer['details']}"
         
-        # Action buttons
+        # Action buttons - UPDATED LINK
         markup = types.InlineKeyboardMarkup(row_width=2)
         markup.add(
-            types.InlineKeyboardButton("📢 Join for Booking", url="https://t.me/flights_half_off"),
-            types.InlineKeyboardButton("💬 Contact for Deal", url="https://t.me/yrfrnd_spidy")
+            types.InlineKeyboardButton("📢 Join for Booking", url="https://t.me/flights_bills_b4u"),
+            types.InlineKeyboardButton("💬 Contact Admin", url="https://t.me/yrfrnd_spidy")
         )
         markup.add(
-            types.InlineKeyboardButton("🏨 More Hotel Deals", callback_data="acc_more"),
-            types.InlineKeyboardButton("🏠 Back to Menu", callback_data="acc_back")
+            types.InlineKeyboardButton("📞 Alt Contact", url="https://t.me/Eatsplugsus"),
+            types.InlineKeyboardButton("🏨 More Deals", callback_data="acc_more")
         )
         
         bot.send_message(call.message.chat.id, response, reply_markup=markup, parse_mode='Markdown')
@@ -246,8 +249,12 @@ Magnificent Mile | The Loop | River North | Gold Coast | Lincoln Park
         
         markup = types.InlineKeyboardMarkup(row_width=2)
         markup.add(
-            types.InlineKeyboardButton("📢 Join for Booking", url="https://t.me/flights_half_off"),
-            types.InlineKeyboardButton("💬 Contact for Deal", url="https://t.me/yrfrnd_spidy")
+            types.InlineKeyboardButton("📢 Join for Booking", url="https://t.me/flights_bills_b4u"),
+            types.InlineKeyboardButton("💬 Contact Admin", url="https://t.me/yrfrnd_spidy")
+        )
+        markup.add(
+            types.InlineKeyboardButton("📞 Alt Contact", url="https://t.me/Eatsplugsus"),
+            types.InlineKeyboardButton("🏠 Back to Menu", callback_data="acc_back")
         )
         
         bot.send_message(call.message.chat.id, response, reply_markup=markup, parse_mode='Markdown')
@@ -280,8 +287,12 @@ Magnificent Mile | The Loop | River North | Gold Coast | Lincoln Park
         
         markup = types.InlineKeyboardMarkup(row_width=2)
         markup.add(
-            types.InlineKeyboardButton("📢 Join for Booking", url="https://t.me/flights_half_off"),
-            types.InlineKeyboardButton("💬 Contact for Deal", url="https://t.me/yrfrnd_spidy")
+            types.InlineKeyboardButton("📢 Join for Booking", url="https://t.me/flights_bills_b4u"),
+            types.InlineKeyboardButton("💬 Contact Admin", url="https://t.me/yrfrnd_spidy")
+        )
+        markup.add(
+            types.InlineKeyboardButton("📞 Alt Contact", url="https://t.me/Eatsplugsus"),
+            types.InlineKeyboardButton("🏨 More Deals", callback_data="acc_more")
         )
         
         bot.send_message(call.message.chat.id, response, reply_markup=markup, parse_mode='Markdown')
@@ -320,7 +331,10 @@ Magnificent Mile | The Loop | River North | Gold Coast | Lincoln Park
             types.InlineKeyboardButton("🎰 Vegas", callback_data="acc_lasvegas"),
             types.InlineKeyboardButton("🏰 Orlando", callback_data="acc_orlando")
         )
-        markup.add(types.InlineKeyboardButton("📢 Join Channel", url="https://t.me/flights_half_off"))
+        markup.add(
+            types.InlineKeyboardButton("📢 Join Channel", url="https://t.me/flights_bills_b4u"),
+            types.InlineKeyboardButton("📞 Alt Contact", url="https://t.me/Eatsplugsus")
+        )
         
         bot.send_message(call.message.chat.id, response, reply_markup=markup, parse_mode='Markdown')
     
